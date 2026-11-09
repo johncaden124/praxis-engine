@@ -1,0 +1,50 @@
+# Weekly block schedule. Days are lowercase English weekday names.
+# Each block: track (must match a key in `tracks` below), start (24h HH:MM), hours.
+# `learn` / `learn start` with no track picks the block for the current day
+# (the block whose start is closest before now, else the first block of the day).
+
+week:
+  monday:
+    - {track: Coding, start: "19:00", hours: 1.5}
+  tuesday:
+    - {track: Math, start: "19:00", hours: 1.5}
+  wednesday:
+    - {track: Coding, start: "19:00", hours: 1.5}
+  thursday:
+    - {track: Math, start: "19:00", hours: 1.5}
+  friday:
+    - {track: Reading, start: "19:00", hours: 2.0}
+  saturday:
+    - {track: Reading, start: "10:00", hours: 2.0}
+  sunday:
+    - {track: Writing, start: "10:00", hours: 2.0}
+    - {track: Discussion, start: "16:00", hours: 1.0}
+
+# Track -> which state.json key it logs into and which file `learn start` opens.
+# `focus` names a key in state.json current_focus; `file` is a fixed vault path.
+tracks:
+  Coding: {stat: hours_coding, focus: project}
+  Math: {stat: hours_math, focus: course}
+  Reading: {stat: hours_reading, focus: reading}
+  Writing: {stat: hours_writing, focus: essay}
+  Discussion: {stat: hours_discussion, file: "06 People.md"}
+
+weekly_floor_hours: 13
+weekly_target_hours: 18
+
+# Cumulative hours expected by the end of each stage (used by the dashboard
+# and the Character Sheet).
+stage_hour_targets:
+  1: 350
+  2: 900
+  3: 1400
+
+# Game economy: what a minute of deep work is worth.
+rewards:
+  xp_per_minute: 1
+  bandwidth_per_minute: 0.5
+  highlight_bandwidth: 10
+  quiz_correct_bandwidth: 8
+  person_xp: 15
+  benchmark_xp: 250
+  challenge_xp: 150

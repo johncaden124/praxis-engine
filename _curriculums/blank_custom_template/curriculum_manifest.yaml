@@ -1,0 +1,37 @@
+# Blank cartridge. Every id referenced here must exist in benchmarks.md,
+# Gather List.md, or be a drone challenge id. Validate with `learn doctor`.
+name: My Custom Curriculum
+version: 1
+author: You
+description: >
+  Replace with a one-line description of your learning goal.
+
+tracks:
+  - {id: core, label: Core Skills, color: "#4fc3f7", hours_key: hours_coding, items: [s1_first, s1_csv, s2_numpy, g_course1, g_course2]}
+  - {id: depth, label: Depth, color: "#81c784", hours_key: hours_reading, items: [s2_second, s3_abm, s3_capstone, g_book1, g_book2]}
+
+stages:
+  - {stage: 1, name: Foundations, months: "0-6", hours_target: 200, benchmarks: [s1_first, s1_csv], people_habit: Talk to one person a week about what you are learning., plateau_warning: Protect the weekly floor.}
+  - {stage: 2, name: Building Capacity, months: "6-12", hours_target: 450, benchmarks: [s2_numpy, s2_second], people_habit: Find a study partner., plateau_warning: The middle is where people quit. Shrink the goal, keep the habit.}
+  - {stage: 3, name: Depth, months: "12-24", hours_target: 800, benchmarks: [s3_abm, s3_capstone], people_habit: Teach what you know., plateau_warning: Finish the capstone even if it is small.}
+
+credentials:
+  cred_first: {name: Your First Credential, issuer: Issuer}
+
+skills:
+  - {name: Python Data Analysis, level: Foundational, requires: [s1_csv]}
+
+tech_tree:
+  - {id: drone_move_basic, name: Basic Locomotion, stage: 1, track: core, unlocked_by: [], description: "move(dir) on the grid.", effect: {feature: move}}
+  - {id: grid_3x3, name: 3x3 Plot, stage: 1, track: core, unlocked_by: [], description: "Your first plot.", effect: {grid_size: 3}}
+  - {id: grid_5x5, name: 5x5 Field, stage: 1, track: core, unlocked_by: [c1_loops], description: "Unlocked by automating a traversal with loops.", effect: {grid_size: 5}}
+  - {id: first_upgrade, name: First Upgrade, stage: 1, track: core, unlocked_by: [s1_first], description: "Steps cost 10% less.", effect: {bandwidth_cost_mult: 0.9}}
+  - {id: capacitor, name: Focus Capacitor, stage: 2, track: depth, unlocked_by: [s2_second, g_book1], description: "+25 max bandwidth.", effect: {max_bandwidth: 25}}
+  - {id: grid_10x10, name: 10x10 World, stage: 3, track: depth, unlocked_by: [s3_capstone], description: "The whole map.", effect: {grid_size: 10}}
+
+challenges:
+  - {id: c1_loops, title: "Sequential & Loops", stage: 1, starter: c1_loops.py, requires_tech: [], benchmark: null}
+  - {id: c2_csv, title: "CSV & Descriptive Stats", stage: 1, starter: c2_csv.py, requires_tech: [], benchmark: s1_csv}
+  - {id: c3_graph, title: "Graph Traversal", stage: 2, starter: c3_graph.py, requires_tech: [grid_5x5], benchmark: null}
+  - {id: c4_numpy, title: "NumPy From Scratch", stage: 2, starter: c4_numpy.py, requires_tech: [grid_5x5], benchmark: s2_numpy}
+  - {id: c5_schelling, title: "Agent-Based Model", stage: 3, starter: c5_schelling.py, requires_tech: [grid_5x5], benchmark: s3_abm}

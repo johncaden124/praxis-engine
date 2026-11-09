@@ -1,0 +1,54 @@
+name: Full-Stack AI Engineer
+version: 1
+author: Praxis starter cartridge
+description: >
+  18 months from Python scripts to shipping production LLM applications.
+
+tracks:
+  - {id: backend, label: Backend & Data, color: "#4fc3f7", hours_key: hours_coding, items: [s1_api, s1_git, s1_csv, s3_prod, g_fastapi, g_postgres, g_ddia]}
+  - {id: frontend, label: Frontend, color: "#ba68c8", hours_key: hours_coding, items: [s1_frontend, g_ts, g_react]}
+  - {id: ml, label: ML & LLMs, color: "#81c784", hours_key: hours_math, items: [s2_numpy, s2_rag, s2_eval, s2_agent, g_fastai, g_karpathy, g_hf, cred_dl_ai]}
+  - {id: craft, label: Craft & Writing, color: "#e57373", hours_key: hours_writing, items: [s3_oss, s3_writeup, s4_ship, g_pragprog, g_ousterhout, cred_github_pin]}
+
+stages:
+  - {stage: 1, name: Engineering Foundations, months: "0-4", hours_target: 200, benchmarks: [s1_api, s1_frontend, s1_git, s1_csv], people_habit: Ask for one code review per week., plateau_warning: Deploying is harder than coding. Ship something ugly early.}
+  - {stage: 2, name: ML & LLM Fundamentals, months: "4-10", hours_target: 550, benchmarks: [s2_numpy, s2_rag, s2_eval, s2_agent], people_habit: Pair-program with someone once a month., plateau_warning: Demos are easy; evals are the job. Write the eval first.}
+  - {stage: 3, name: Production & Scale, months: "10-18", hours_target: 950, benchmarks: [s3_prod, s3_abm, s3_oss, s3_writeup], people_habit: Give a talk or write-up for other engineers., plateau_warning: Ops work is invisible. Keep a changelog of what you made reliable.}
+  - {stage: 4, name: Mastery, months: "18+", hours_target: 0, benchmarks: [s4_ship], people_habit: Mentor a beginner., plateau_warning: Pick a hard problem and own it.}
+
+credentials:
+  cred_aws_cp: {name: AWS Certified Cloud Practitioner, issuer: Amazon Web Services}
+  cred_dl_ai: {name: DeepLearning.AI Course Certificate, issuer: DeepLearning.AI}
+  cred_github_pin: {name: Polished Open-Source Project, issuer: GitHub}
+
+skills:
+  - {name: Python & FastAPI, level: Intermediate, requires: [s1_api]}
+  - {name: React & TypeScript, level: Foundational, requires: [s1_frontend]}
+  - {name: Retrieval-Augmented Generation, level: Intermediate, requires: [s2_rag]}
+  - {name: LLM Evaluation, level: Intermediate, requires: [s2_eval]}
+  - {name: Production ML Ops, level: Advanced, requires: [s3_prod]}
+
+tech_tree:
+  - {id: drone_move_basic, name: Basic Locomotion, stage: 1, track: backend, unlocked_by: [], description: "move(dir) on the grid.", effect: {feature: move}}
+  - {id: grid_3x3, name: 3x3 Dev Box, stage: 1, track: backend, unlocked_by: [], description: "Your laptop.", effect: {grid_size: 3}}
+  - {id: grid_5x5, name: 5x5 Staging Cluster, stage: 1, track: backend, unlocked_by: [c1_loops], description: "Unlocked by automating a traversal.", effect: {grid_size: 5}}
+  - {id: csv_ingest, name: Data Ingest Port, stage: 1, track: backend, unlocked_by: [s1_csv, c2_csv], description: "Read real datasets.", effect: {sensor: csv}}
+  - {id: api_gateway, name: API Gateway, stage: 1, track: backend, unlocked_by: [s1_api, g_fastapi], description: "Steps cost 15% less.", effect: {bandwidth_cost_mult: 0.85}}
+  - {id: hud_frontend, name: Frontend HUD, stage: 1, track: frontend, unlocked_by: [s1_frontend], description: "+25 max bandwidth.", effect: {max_bandwidth: 25}}
+  - {id: tensor_core, name: Tensor Core, stage: 2, track: ml, unlocked_by: [s2_numpy, c4_numpy], description: "Predict tile yields.", effect: {sensor: predict}}
+  - {id: retrieval_array, name: Retrieval Array, stage: 2, track: ml, unlocked_by: [s2_rag], description: "Scan nearby tiles at once.", effect: {sensor: stats}}
+  - {id: eval_harness, name: Eval Harness, stage: 2, track: ml, unlocked_by: [s2_eval], description: "Clock speed x2.", effect: {clock_speed: 2.0}}
+  - {id: agent_core, name: Agent Core, stage: 2, track: ml, unlocked_by: [s2_agent, g_karpathy], description: "Steps cost 25% less.", effect: {bandwidth_cost_mult: 0.75}}
+  - {id: grid_10x10, name: 10x10 Production Region, stage: 2, track: backend, unlocked_by: [s2_rag, s2_eval], description: "Scale out.", effect: {grid_size: 10}}
+  - {id: graph_pathfinder, name: Service Mesh Router, stage: 2, track: backend, unlocked_by: [c3_graph], description: "BFS routing.", effect: {feature: pathfinder}}
+  - {id: abm_simulator, name: Load Simulator, stage: 3, track: backend, unlocked_by: [s3_abm, c5_schelling], description: "Simulate user populations.", effect: {sensor: abm}}
+  - {id: observability, name: Observability Deck, stage: 3, track: backend, unlocked_by: [s3_prod], description: "+50 max bandwidth.", effect: {max_bandwidth: 50}}
+  - {id: broadcast_tower, name: Broadcast Tower, stage: 3, track: craft, unlocked_by: [s3_writeup], description: "Publish deep-dives.", effect: {feature: publish}}
+  - {id: autonomy_core, name: Autonomy Core, stage: 4, track: craft, unlocked_by: [s4_ship], description: "Strangers use your work.", effect: {feature: autonomy}}
+
+challenges:
+  - {id: c1_loops, title: "Sequential & Loops: Survey Sweep", stage: 1, starter: c1_loops.py, requires_tech: [], benchmark: null}
+  - {id: c2_csv, title: "CSV & Descriptive Stats", stage: 1, starter: c2_csv.py, requires_tech: [], benchmark: s1_csv}
+  - {id: c3_graph, title: "Graph Traversal: Find the Bridge", stage: 2, starter: c3_graph.py, requires_tech: [grid_5x5], benchmark: null}
+  - {id: c4_numpy, title: "NumPy From Scratch: Regression", stage: 2, starter: c4_numpy.py, requires_tech: [grid_5x5], benchmark: s2_numpy}
+  - {id: c5_schelling, title: "Agent-Based Simulation", stage: 3, starter: c5_schelling.py, requires_tech: [grid_5x5], benchmark: s3_abm}

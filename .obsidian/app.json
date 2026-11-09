@@ -1,0 +1,10 @@
+{
+  "newFileLocation": "folder",
+  "newFileFolderPath": "02 Today",
+  "attachmentFolderPath": "_assets",
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "readableLineLength": true,
+  "useMarkdownLinks": false,
+  "userIgnoreFilters": ["game/", "code/", "_scripts/", "10 Portfolio/resume.json"]
+}

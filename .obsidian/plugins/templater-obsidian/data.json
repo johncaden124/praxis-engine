@@ -1,0 +1,13 @@
+{
+  "templates_folder": "_templates",
+  "trigger_on_file_creation": true,
+  "auto_jump_to_cursor": true,
+  "folder_templates": [
+    {"folder": "02 Today", "template": "_templates/daily.md"},
+    {"folder": "03 Reading", "template": "_templates/reading.md"},
+    {"folder": "04 Writing", "template": "_templates/essay.md"},
+    {"folder": "07 Projects", "template": "_templates/project.md"},
+    {"folder": "09 Reviews", "template": "_templates/review.md"}
+  ],
+  "enable_folder_templates": true
+}

@@ -1,0 +1,37 @@
+; Engine configuration file.
+; Praxis: The Emergent Grid — Godot 4.2+ (GL Compatibility renderer).
+; The game lives inside the Praxis vault (~/Learning/game) and talks to the
+; Python engine in ../_scripts via OS.execute.
+
+config_version=5
+
+[application]
+
+config/name="Praxis: The Emergent Grid"
+config/description="A diegetic learning OS: program a research drone in real Python, recharge it by studying."
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/GameManager.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=960
+window/size/resizable=true
+window/stretch/mode="disabled"
+window/dpi/allow_hidpi=true
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+theme/default_font_antialiasing=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.043, 0.059, 0.078, 1)
