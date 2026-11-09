@@ -1,0 +1,7 @@
+{
+  "daily-notes": [{"modifiers": ["Mod", "Shift"], "key": "T"}],
+  "quickadd:choice:praxis-question": [{"modifiers": ["Mod", "Shift"], "key": "Q"}],
+  "quickadd:choice:praxis-person": [{"modifiers": ["Mod", "Shift"], "key": "P"}],
+  "quickadd:choice:praxis-flashcard": [{"modifiers": ["Mod", "Shift"], "key": "C"}],
+  "homepage:open-homepage": [{"modifiers": ["Mod", "Shift"], "key": "D"}]
+}

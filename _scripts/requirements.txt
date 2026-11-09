@@ -1,0 +1,10 @@
+# Core
+pyyaml>=6.0
+requests>=2.31
+readability-lxml>=0.8
+# Drone challenges (pandas/NumPy/matplotlib are part of the curriculum)
+numpy>=1.26
+pandas>=2.1
+matplotlib>=3.8
+# Tests
+pytest>=8.0

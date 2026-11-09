@@ -1,0 +1,10 @@
+# Praxis — public engine
+__pycache__/
+*.pyc
+.DS_Store
+game/.godot/
+game/*.translation
+.obsidian/workspace*.json
+_scripts/scheduler/*.log
+_scripts/prompts/.last_prompt.md
+_curriculums/_backup_*/

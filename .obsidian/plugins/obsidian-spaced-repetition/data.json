@@ -1,0 +1,8 @@
+{
+  "flashcardTags": ["#flashcard"],
+  "convertFoldersToDecks": true,
+  "singleLineCardSeparator": "::",
+  "singleLineReversedCardSeparator": ":::",
+  "multilineCardSeparator": "?",
+  "noteFoldersToIgnore": ["_templates", "_curriculums", "game", "code", "_scripts"]
+}

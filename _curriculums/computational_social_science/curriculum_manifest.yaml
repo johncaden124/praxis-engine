@@ -1,0 +1,153 @@
+# Curriculum manifest — the machine-readable "cartridge" the engine plugs into.
+#
+# The engine (learn.py, build_resume.py, the Godot game) never hardcodes a
+# curriculum. Everything about tracks, stages, tech-tree rewards and challenge
+# gating is read from this file plus the checkboxes in benchmarks.md and
+# Gather List.md. Swap this folder (learn init-curriculum <template>) and the
+# whole game re-skins itself around a different degree or self-study plan.
+#
+# IDs referenced here must exist as `- [ ] (`id`)` lines in benchmarks.md or
+# Gather List.md, or be a drone challenge id (c1_loops ...). `learn doctor`
+# checks this.
+
+name: Computational Social Science & AI
+version: 1
+author: Praxis default cartridge
+description: >
+  A 3-year self-directed path: Psychology -> Sociology, with CS/AI as the
+  instrument and Philosophy as connective tissue.
+
+# Portfolio progress bars and per-track hour targets.
+# `items` are benchmark / gather ids whose completion fills the bar.
+# `hours_key` maps to state.json weekly_stats.
+tracks:
+  - id: math
+    label: Math & Statistics
+    color: "#4fc3f7"
+    hours_key: hours_math
+    items: [s1_stats, s2_math, s3_causal, g_openintro, g_khan_stats, g_mit1801, g_mit1806, g_stat110, g_mit1802, cred_coursera_stats, cred_clep_calc]
+  - id: coding
+    label: Coding & AI
+    color: "#81c784"
+    hours_key: hours_coding
+    items: [s1_csv, s2_numpy, s3_model, s3_abm, g_cs50, g_mit6001, g_mit6006, g_ng_ml, g_fastai, g_cs229, g_cs224n, cred_cs50, cred_ng_ml, cred_github_pin, cred_kaggle]
+  - id: psych_soc
+    label: Psychology & Sociology
+    color: "#ffb74d"
+    hours_key: hours_reading
+    items: [s1_biases, s2_soc, s3_openq, g_kahneman, g_haidt, g_openstax_psych, g_yale_psych, g_intro_soc, g_granovetter, g_durkheim, g_salganik, cred_clep_psych, cred_clep_soc]
+  - id: philosophy
+    label: Philosophy
+    color: "#ba68c8"
+    hours_key: hours_reading
+    items: [g_russell_problems, g_mill_util, g_plato, g_aurelius, g_kuhn, g_mill_liberty, g_descartes, g_ryle, g_rawls, g_dennett, g_chalmers, g_popper]
+  - id: writing
+    label: Writing & Research
+    color: "#e57373"
+    hours_key: hours_writing
+    items: [s1_read, s1_write, s2_write, s3_paper, s4_ship, cred_substack, cred_arxiv]
+
+# Stages: which benchmarks must be complete to advance, plus the
+# people-skills habit and plateau warning shown in the Social Radar.
+stages:
+  - stage: 1
+    name: Foundations
+    months: "0-6"
+    hours_target: 350
+    benchmarks: [s1_csv, s1_stats, s1_read, s1_write, s1_biases]
+    people_habit: One listening-only conversation per week. Log 3 things you learned.
+    plateau_warning: Around month 3 the novelty fades. Protect the floor, not the ceiling.
+  - stage: 2
+    name: Building Capacity
+    months: "6-18"
+    hours_target: 900
+    benchmarks: [s2_numpy, s2_math, s2_soc, s2_write, s2_courses, s2_listen]
+    people_habit: Bring up one remembered detail per week. One specific compliment per day.
+    plateau_warning: Linear algebra and 6.006 are where most self-learners stall. Do the problem sets anyway.
+  - stage: 3
+    name: Depth
+    months: "18-36"
+    hours_target: 1400
+    benchmarks: [s3_model, s3_abm, s3_causal, s3_openq, s3_paper, s3_grad]
+    people_habit: Host a regular gathering. Practice warm disagreement.
+    plateau_warning: Depth feels like slowness. Ship the paper even if it is smaller than you wanted.
+  - stage: 4
+    name: Mastery
+    months: "36+"
+    hours_target: 0
+    benchmarks: [s4_ship]
+    people_habit: Mentor someone one stage behind you.
+    plateau_warning: There is no curriculum now. Pick a question and stay with it.
+
+# Credentials -> résumé certificates.
+credentials:
+  cred_cs50: {name: "CS50x: Introduction to Computer Science", issuer: "Harvard / edX"}
+  cred_clep_psych: {name: "CLEP Introductory Psychology", issuer: "College Board"}
+  cred_coursera_stats: {name: "Verified Statistics Certificate", issuer: "Coursera"}
+  cred_clep_soc: {name: "CLEP Introductory Sociology", issuer: "College Board"}
+  cred_github_pin: {name: "First Polished Open-Source Project", issuer: "GitHub"}
+  cred_google_da: {name: "Google Data Analytics Professional Certificate", issuer: "Google / Coursera"}
+  cred_clep_calc: {name: "CLEP Calculus", issuer: "College Board"}
+  cred_ng_ml: {name: "Machine Learning Specialization", issuer: "DeepLearning.AI / Stanford"}
+  cred_aws_cp: {name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services"}
+  cred_micromasters_start: {name: "MITx MicroMasters in Statistics & Data Science (enrolled)", issuer: "MITx"}
+  cred_kaggle: {name: "Kaggle Competition with Public Notebook", issuer: "Kaggle"}
+  cred_google_ada: {name: "Google Advanced Data Analytics Certificate", issuer: "Google / Coursera"}
+  cred_substack: {name: "Published Analysis Blog (6+ pieces)", issuer: "Substack"}
+  cred_aws_ml: {name: "AWS Certified Machine Learning – Specialty", issuer: "Amazon Web Services"}
+  cred_arxiv: {name: "Research Paper on arXiv/SSRN with Public Repo", issuer: "arXiv / SSRN"}
+  cred_micromasters_done: {name: "MITx MicroMasters in Statistics & Data Science", issuer: "MITx"}
+
+# Skills listed on the résumé once the linked ids are complete.
+skills:
+  - {name: Python & pandas, level: Foundational, requires: [s1_csv]}
+  - {name: Statistics & Inference, level: Foundational, requires: [s1_stats]}
+  - {name: NumPy & Linear Models, level: Intermediate, requires: [s2_numpy]}
+  - {name: Linear Algebra & Calculus, level: Intermediate, requires: [s2_math]}
+  - {name: Social Network Analysis, level: Intermediate, requires: [s2_soc]}
+  - {name: Agent-Based Modeling, level: Advanced, requires: [s3_abm]}
+  - {name: Causal Inference, level: Advanced, requires: [s3_causal]}
+  - {name: Machine Learning on Human Data, level: Advanced, requires: [s3_model]}
+  - {name: Argumentative & Research Writing, level: Intermediate, requires: [s1_write]}
+
+# Tech tree. `unlocked_by`: ANY of these ids (benchmark, gather item, or drone
+# challenge) unlocks the node. `effect` is interpreted by the engine:
+#   grid_size: N            -> sandbox grid becomes N x N
+#   bandwidth_cost_mult: f  -> drone step cost multiplier (stacks)
+#   max_bandwidth: +N       -> raises the Cognitive Bandwidth cap
+#   clock_speed: f          -> animation speed multiplier
+#   sensor: name            -> enables a station_api sensor
+#   feature: name           -> unlocks a UI feature
+tech_tree:
+  - {id: drone_move_basic, name: Basic Locomotion, stage: 1, track: coding, unlocked_by: [], description: "move(dir) on the grid.", effect: {feature: move}}
+  - {id: grid_3x3, name: 3x3 Field Plot, stage: 1, track: coding, unlocked_by: [], description: "Your first research plot.", effect: {grid_size: 3}}
+  - {id: grid_5x5, name: 5x5 Survey Field, stage: 1, track: coding, unlocked_by: [c1_loops], description: "Unlocked by automating a full traversal with loops.", effect: {grid_size: 5}}
+  - {id: loop_coprocessor, name: Loop Co-Processor, stage: 1, track: coding, unlocked_by: [g_cs50, g_bootdev, cred_cs50], description: "Finishing CS50x/Boot.dev makes every drone step 20% cheaper.", effect: {bandwidth_cost_mult: 0.8}}
+  - {id: csv_ingest, name: CSV Ingest Port, stage: 1, track: coding, unlocked_by: [s1_csv, c2_csv], description: "The drone can read real CSV datasets.", effect: {sensor: csv}}
+  - {id: statistical_scanner, name: Statistical Scanner Sensor, stage: 1, track: math, unlocked_by: [g_openintro, s1_stats], description: "Completing OpenIntro Statistics lets scan() report p-values.", effect: {sensor: stats}}
+  - {id: grid_7x7, name: 7x7 Field Grid, stage: 1, track: coding, unlocked_by: [s1_csv], description: "A bigger study area.", effect: {grid_size: 7}}
+  - {id: bandwidth_capacitor_1, name: Attention Capacitor I, stage: 1, track: psych_soc, unlocked_by: [s1_read], description: "Deep reading stamina: +25 max bandwidth.", effect: {max_bandwidth: 25}}
+  - {id: broadcast_tower, name: Broadcast Tower, stage: 1, track: writing, unlocked_by: [s1_write], description: "Publish essays to the portfolio.", effect: {feature: publish}}
+  - {id: bias_filter, name: Bias Filter, stage: 1, track: psych_soc, unlocked_by: [s1_biases, g_kahneman], description: "clean_outlier() also flags systematically biased samples.", effect: {sensor: bias}}
+  - {id: clock_overdrive, name: Clock Overdrive, stage: 2, track: coding, unlocked_by: [g_mit6001], description: "MIT 6.0001 doubles drone clock speed.", effect: {clock_speed: 2.0}}
+  - {id: network_sensor, name: Social Network Sensor, stage: 2, track: psych_soc, unlocked_by: [g_granovetter, s2_soc], description: "See ties between agent tiles.", effect: {sensor: network}}
+  - {id: graph_pathfinder, name: Graph Pathfinder, stage: 2, track: coding, unlocked_by: [g_mit6006, c3_graph], description: "BFS/DFS routing module.", effect: {feature: pathfinder}}
+  - {id: matrix_batch_ops, name: Matrix Batch Operations, stage: 2, track: math, unlocked_by: [g_mit1806, s2_math], description: "MIT 18.06 lets the drone harvest whole rows at once (step cost x0.75).", effect: {bandwidth_cost_mult: 0.75}}
+  - {id: gradient_engine, name: Gradient Engine, stage: 2, track: math, unlocked_by: [s2_numpy, c4_numpy], description: "Predict tile yields before harvesting.", effect: {sensor: predict}}
+  - {id: grid_10x10, name: 10x10 Metro Grid, stage: 2, track: coding, unlocked_by: [s2_numpy, s2_courses], description: "A whole city to study.", effect: {grid_size: 10}}
+  - {id: bandwidth_capacitor_2, name: Attention Capacitor II, stage: 2, track: writing, unlocked_by: [s2_write], description: "+25 max bandwidth.", effect: {max_bandwidth: 25}}
+  - {id: social_radar_plus, name: Empathic Radar, stage: 2, track: psych_soc, unlocked_by: [s2_listen], description: "Radar shows remembered details on hover.", effect: {feature: radar_details}}
+  - {id: abm_simulator, name: ABM Simulator, stage: 3, track: coding, unlocked_by: [g_mesa, s3_abm, c5_schelling], description: "run_abm_step() runs full agent societies.", effect: {sensor: abm}}
+  - {id: causal_lens, name: Causal Lens, stage: 3, track: math, unlocked_by: [g_mixtape, g_pearl, s3_causal], description: "Distinguish correlation tiles from causal tiles.", effect: {sensor: causal}}
+  - {id: neural_core, name: Neural Core, stage: 3, track: coding, unlocked_by: [g_fastai, s3_model], description: "A learned policy for the drone.", effect: {bandwidth_cost_mult: 0.7}}
+  - {id: broadcast_amplifier, name: Broadcast Amplifier, stage: 3, track: writing, unlocked_by: [s3_paper], description: "Research papers reach the public portfolio front page.", effect: {max_bandwidth: 50}}
+  - {id: autonomy_core, name: Autonomy Core, stage: 4, track: writing, unlocked_by: [s4_ship], description: "Strangers are using your work. The station runs itself.", effect: {feature: autonomy}}
+
+# Drone challenges (implemented by the engine in _scripts/drone_runner.py).
+# `benchmark` is checked off automatically on pass; `requires_tech` gates access.
+challenges:
+  - {id: c1_loops, title: "Sequential & Loops: Survey Sweep", stage: 1, starter: c1_loops.py, requires_tech: [], benchmark: null}
+  - {id: c2_csv, title: "CSV & Descriptive Stats", stage: 1, starter: c2_csv.py, requires_tech: [], benchmark: s1_csv}
+  - {id: c3_graph, title: "Weak Ties: Graph Traversal", stage: 2, starter: c3_graph.py, requires_tech: [grid_5x5], benchmark: null}
+  - {id: c4_numpy, title: "NumPy From Scratch: Yield Regression", stage: 2, starter: c4_numpy.py, requires_tech: [grid_5x5], benchmark: s2_numpy}
+  - {id: c5_schelling, title: "Schelling Segregation ABM", stage: 3, starter: c5_schelling.py, requires_tech: [grid_5x5], benchmark: s3_abm}

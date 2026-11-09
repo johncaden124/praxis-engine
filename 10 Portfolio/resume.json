@@ -1,0 +1,63 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Your Name",
+    "label": "Computational Social Science · Psychology · AI",
+    "email": "",
+    "url": "",
+    "summary": "Self-directed learner building a 3-year computational social science curriculum in public: psychology and sociology as the subject, code and statistics as the instrument, philosophy as the connective tissue. This résumé is generated automatically by the learning game I play every day.",
+    "location": {
+      "city": ""
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "johncaden124",
+        "url": "https://github.com/johncaden124"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Self-directed curriculum (Praxis Learning OS)",
+      "area": "Computational Social Science & AI",
+      "studyType": "Stage 1: Foundations",
+      "score": "0 logged study hours",
+      "courses": []
+    }
+  ],
+  "certificates": [],
+  "projects": [
+    {
+      "name": "csv-plotter",
+      "description": "Load any CSV from the command line and plot a column against another.",
+      "url": "",
+      "keywords": [
+        "python",
+        "pandas",
+        "matplotlib"
+      ],
+      "startDate": ""
+    }
+  ],
+  "publications": [],
+  "skills": [],
+  "meta": {
+    "generator": "Praxis build_resume.py",
+    "lastModified": "2026-11-09T15:19:59",
+    "praxis": {
+      "stage": 1,
+      "xp": 0,
+      "streak_days": 0,
+      "hours": {
+        "math": 0.0,
+        "coding": 0.0,
+        "reading": 0.0,
+        "writing": 0.0,
+        "discussion": 0.0
+      },
+      "benchmarks_completed": [],
+      "challenges_passed": []
+    }
+  }
+}

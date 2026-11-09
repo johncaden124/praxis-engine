@@ -1,0 +1,59 @@
+{
+  "curriculum_name": "Computational Social Science & AI",
+  "stage": 1,
+  "xp": 0,
+  "cognitive_bandwidth": 100,
+  "max_bandwidth": 100,
+  "streak_days": 0,
+  "last_active_date": null,
+  "active_session": {
+    "running": false,
+    "track": null,
+    "target_file": null,
+    "start_timestamp": null
+  },
+  "current_focus": {
+    "reading": "03 Reading/How to Read a Book.md",
+    "course": "CS50x",
+    "essay": "04 Writing/Essay 01.md",
+    "project": null
+  },
+  "weekly_stats": {
+    "week_start": null,
+    "hours_math": 0.0,
+    "hours_coding": 0.0,
+    "hours_reading": 0.0,
+    "hours_writing": 0.0,
+    "hours_discussion": 0.0,
+    "pages_read": 0,
+    "cards_due": 0,
+    "cards_reviewed": 0
+  },
+  "lifetime_stats": {
+    "hours_math": 0.0,
+    "hours_coding": 0.0,
+    "hours_reading": 0.0,
+    "hours_writing": 0.0,
+    "hours_discussion": 0.0,
+    "pages_read": 0,
+    "cards_reviewed": 0,
+    "drone_runs": 0,
+    "challenges_passed": []
+  },
+  "daily_log": {},
+  "unlocked_tech": [
+    "drone_move_basic",
+    "grid_3x3"
+  ],
+  "completed_benchmarks": [],
+  "earned_credentials": [],
+  "people_nodes": [
+    {
+      "name": "Example Mentor",
+      "last_contact": "2026-01-01",
+      "days_since": 0,
+      "notes_count": 1,
+      "status": "active"
+    }
+  ]
+}

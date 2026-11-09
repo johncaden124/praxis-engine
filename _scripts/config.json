@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "name": "Your Name",
+    "label": "What you are learning",
+    "email": "",
+    "website": "",
+    "github": "",
+    "location": "",
+    "summary": "Self-directed learner. This résumé is generated automatically by Praxis."
+  },
+  "praxis_engine_url": "https://github.com/johncaden124/praxis-engine",
+  "obsidian_vault_name": "Learning",
+  "model": "claude-opus-5-5",
+  "godot_bin": "",
+  "public_export_dir": "~/Learning_Public_Export"
+}
